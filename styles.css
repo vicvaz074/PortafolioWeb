@@ -126,8 +126,6 @@ footer {
   text-align: center;
 }
 
-
-
 .carousel-item img {
   max-height: 500px;
   margin: 0 auto;
@@ -156,7 +154,6 @@ footer {
     bottom: 30px;
   }
 }
-
 
 #university-logo {
   width: 115px;  /* Ajusta el valor según el tamaño que prefieras */
