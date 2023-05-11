@@ -1,7 +1,9 @@
 body {
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
   background: linear-gradient(to bottom, #8f7ad4, #4d4dff, #57abbe);
+  background-size: auto 2600px;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 .navbar {
@@ -9,7 +11,6 @@ body {
   padding: 20px;
   color: #fff;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: sticky;
@@ -17,62 +18,46 @@ body {
   z-index: 1;
 }
 
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 20px;
+.navbar .menu {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s;
 }
 
 .navbar .icon {
   display: none;
 }
 
-.gradient-bg {
-  background: linear-gradient(to bottom, #8f7ad4, #4d4dff, #00d2ff);
-}
-
-.navbar .menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease-in-out;
-}
-
-.navbar .icon {
-  display: block;
-  cursor: pointer;
-}
-
-.navbar .icon i {
-  font-size: 1.5rem;
-}
-
-.navbar .icon.active i:before {
-  content: "\f00d";
-}
-
-.navbar .icon i:before {
-  content: "\f0c9";
-}
-
-.navbar .menu.active {
-  height: auto;
-}
-
 @media screen and (max-width: 768px) {
-  .navbar {
-    height: 60px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+  .navbar .menu {
+      flex-direction: column;
+      display: none;
+      position: absolute;
+      background-color: #0d0d0d;
+      width: 100%;
+      left: 0;
+      top: 60px;
   }
-  .navbar a {
-    margin-right: 0;
-    margin-bottom: 10px;
+
+  .navbar .menu.active {
+      display: flex;
+  }
+
+  .navbar .icon {
+      display: block;
+  }
+
+  .navbar .icon.active i:before {
+      content: "\f00d";
+  }
+
+  .navbar .icon i:before {
+      content: "\f0c9";
   }
 }
+
+/* ... Resto de tus estilos ... */
+
 
 main {
   margin: 50px;
@@ -126,6 +111,8 @@ footer {
   text-align: center;
 }
 
+
+
 .carousel-item img {
   max-height: 500px;
   margin: 0 auto;
@@ -155,9 +142,49 @@ footer {
   }
 }
 
+
 #university-logo {
   width: 115px;  /* Ajusta el valor según el tamaño que prefieras */
   height: auto;  /* Mantén 'auto' para preservar la relación de aspecto */
   float: left;   /* Para alinear la imagen a la izquierda del texto */
   margin-right: 10px;  /* Espacio a la derecha de la imagen */
+}
+
+#google_translate_element {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 385px) {
+
+  body {
+      font-size: 16px; /* Ajusta el tamaño de fuente para un mejor ajuste en dispositivos pequeños */
+  }
+
+  .navbar {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .navbar .icon {
+      display: block;
+  }
+
+  .navbar .menu {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 60px;
+  }
+
+  .navbar .menu.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
 }

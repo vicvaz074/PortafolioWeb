@@ -1,21 +1,18 @@
 AOS.init();
 
-const navbar = document.querySelector('.navbar');
+const navToggle = document.querySelector('.icon');
+const navMenu = document.querySelector('.navbar .menu');
 
-window.onscroll = () => {
-    if (window.scrollY > 0) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-}
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+});
 
-function myFunction() {
-    var x = document.querySelector('.navbar');
-    if (x.className === 'navbar') {
-        x.className += ' responsive';
-    } else {
-        x.className = 'navbar';
+window.addEventListener('resize', () => {
+    if(window.innerWidth > 768) {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
     }
-}
+});
+
 
