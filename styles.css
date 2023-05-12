@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   background: linear-gradient(to bottom, #8f7ad4, #4d4dff, #57abbe);
-  background-size: auto 3000px;
+  background-size: auto 6000px;
   color: #fff;
   font-family: Arial, sans-serif;
 }
@@ -186,19 +186,23 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-origin: padding-box;
   }
 }
 
-@media (min-width: 386px) {
+@media (max-width: 386px) {
   .carousel-item {
-      height: 600px;  
+      height: 610px; 
+      bottom: auto; 
   }
   .carousel-caption {
       font-size: 0.8rem;
       line-height: 1.2;
+      bottom: auto;
   }
   .carousel-caption h1 {
       font-size: 1.5rem;
+      bottom: auto;
   }
 }
 
